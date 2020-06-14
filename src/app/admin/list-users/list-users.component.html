@@ -1,30 +1,25 @@
 <table class="table table-hover">
     <thead>
       <tr>
+        <th>#</th>
         <th scope="col">username/email</th>
         <th scope="col">First name</th>
         <th scope="col">Last name</th>
         <th scope="col">phone number</th>
         <th scope="col">address</th>
+        <th scope="col">Role</th>
       </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of listUsers">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{item.Id}}</th>
+        <td>{{item.username}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.address}} {{item.city}} {{item.zipCode}}</td>
+        <td>{{item.roles[0].name}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+
     </tbody>
   </table>

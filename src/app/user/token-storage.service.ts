@@ -11,6 +11,7 @@ export class TokenStorageService {
 
   static isLogInSuccess = false;
   static completeName : string = " ";
+  static isAdmin: boolean = false;
   constructor() { }
   signOut() {
     window.sessionStorage.clear();

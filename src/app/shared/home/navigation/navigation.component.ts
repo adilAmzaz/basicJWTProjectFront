@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { GlobalConfig } from 'src/app/global-config';
 import { UserComponent } from 'src/app/user/user.component';
 import { Router } from '@angular/router';
+import { UserHttpService } from 'src/app/user/user-http.service';
 
 @Component({
   selector: 'app-navigation',
@@ -28,11 +29,12 @@ export class NavigationComponent implements OnInit {
     TokenStorageService.removeToken();
     TokenStorageService.removeCompleteUser();
     TokenStorageService.isLogInSuccess = false;
+    UserHttpService.isAdmin = false
     this._router.navigate(['/home']);
   }
   isAdmin()
   {
-    return true;
+    return UserHttpService.isAdmin;
   }
 
 

@@ -8,6 +8,9 @@ import { GlobalConfig } from '../global-config';
 })
 export class UserHttpService {
 
+  static isAdmin : boolean = false;
+  static completeName : string = " ";
+
   constructor(private _http: HttpClient) { }
 
   addUser(user: UserModule): Observable<UserModule>
@@ -15,9 +18,14 @@ export class UserHttpService {
     return this._http.post<UserModule>(GlobalConfig.addUser, user);
   }
 
-  getUserByMail(userMail: String): Observable<UserModule>
+  getUserUserName(username: String): Observable<UserModule>
   {
-    return this._http.get<UserModule>(GlobalConfig.getUserByEmail+"/"+ userMail);
+    return this._http.get<UserModule>(GlobalConfig.getUserByUsername+"/"+ username);
+  }
+
+  getAllUsers(): Observable<UserModule[]>
+  {
+    return this._http.get<UserModule[]>(GlobalConfig.getAllUsers);
   }
   test() : Observable<String>
   {

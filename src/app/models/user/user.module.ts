@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class UserModule {
-  //Id : number;
+  Id : number;
   lastName: string;
   firstName: string;
   isFamele: boolean;
@@ -21,4 +21,15 @@ export class UserModule {
   zipCode: string;
   username : string;
   city: string;
+  roles : Role[];
+ }
+
+ export enum ERole{
+	  ROLE_USER,
+    ROLE_MODERATOR,
+    ROLE_ADMIN
+ }
+
+ export class Role{
+   name : ERole;
  }

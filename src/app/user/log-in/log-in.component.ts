@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { GlobalConfig } from 'src/app/global-config';
 //import { error } from 'protractor';
 import { TokenStorageService } from '../token-storage.service';
-import { UserModule } from 'src/app/models/user/user.module';
+import { UserModule, ERole } from 'src/app/models/user/user.module';
 import { Router } from '@angular/router';
 import { UserHttpService } from '../user-http.service';
 import { error } from 'protractor';
@@ -42,6 +42,9 @@ public  login(){
 
           TokenStorageService.saveCompleteUser(obj2);
           TokenStorageService.completeName = obj2.firstName+" "+obj2.lastName;
+          UserHttpService.completeName = obj2.firstName+" "+obj2.lastName;
+          if(obj2.roles[0].name === ERole[2])
+            UserHttpService.isAdmin = true;
           this._router.navigate(['/home']);
         },
         error =>{

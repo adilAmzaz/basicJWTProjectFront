@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top shadow">
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top shadow">
     <ul class="navbar-nav mr-auto" >
         <li class="nav-item">
             <a class="nav-link"  [routerLink]="['/home']">Accueil</a>
@@ -26,9 +26,7 @@
                     <a  id = "outilsAdmin" href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Outils Admin</a>
                 
                 <div class="dropdown-menu" aria-labelledby="outilsAdmin">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" [routerLink]="['/listOfUsers']">Listes des utilsateurs</a>
                 </div>
             </div>
         </li>
